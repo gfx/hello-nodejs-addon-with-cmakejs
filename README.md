@@ -6,6 +6,11 @@ This is an example project that compiles with `cmake-js`, not `node-gyp`.
 
 `cmake-js` + N-API leads the new age of NodeJS native addons!
 
+## How to build
+
+* build: `npm run build` (it just calls `cmake-js`)
+* test: `npm run test`
+
 ## See Also
 
 * cmake-js: https://github.com/cmake-js/cmake-js
