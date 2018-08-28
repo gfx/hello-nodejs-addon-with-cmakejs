@@ -1,0 +1,15 @@
+{
+  "name": "hello-nodejs-addon-with-cmakejs",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "cmake-js",
+    "test": "node src"
+  },
+  "author": "FUJI Goro",
+  "license": "ISC",
+  "dependencies": {
+    "cmake-js": "^3.7.3"
+  }
+}
