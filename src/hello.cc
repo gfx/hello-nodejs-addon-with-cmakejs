@@ -1,10 +1,10 @@
 #include <node_api.h>
 #include <cassert>
 
-namespace hello
+namespace
 {
 
-static napi_value sayHello(napi_env env, napi_callback_info info)
+napi_value sayHello(napi_env env, napi_callback_info info)
 {
   napi_status status;
   napi_value js_value;
@@ -13,7 +13,8 @@ static napi_value sayHello(napi_env env, napi_callback_info info)
   return js_value;
 }
 
-static void export_func(napi_env env, napi_value exports, const char* name, napi_callback f) {
+void export_func(napi_env env, napi_value exports, const char *name, napi_callback f)
+{
   napi_status status;
   napi_value func;
   status = napi_create_function(env, name, NAPI_AUTO_LENGTH, f, nullptr, &func);
@@ -21,10 +22,10 @@ static void export_func(napi_env env, napi_value exports, const char* name, napi
   napi_set_named_property(env, exports, name, func);
 }
 
-static napi_value Init(napi_env env, napi_value exports)
+napi_value Init(napi_env env, napi_value exports)
 {
   export_func(env, exports, "sayHello", sayHello);
 }
 
 NAPI_MODULE(NODE_GYP_MODULE_NAME, Init)
-} // namespace hello
+} // namespace
